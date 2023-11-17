@@ -1,10 +1,11 @@
 export const globalOptions = {
-  name: "nenad-testing-13-44534",
-  url: "https://nenad-testing-13-44534.botics.co",
-  api: "https://nenad-testing-13-44534.botics.co/api/v1",
-  screenOptions: {
-    headerShown: false
-  }
+  "name": "nenad-testing-13-44534",
+  "url": "https://nenad-testing-13-44534.botics.co",
+  "api": "https://nenad-testing-13-44534.botics.co/api/v1",
+  "screenOptions": {
+    "headerShown": false
+  },
+  "initialRoute": "login"
 };
 export const modulesOptions = {
   "@modules/app-menu": {
