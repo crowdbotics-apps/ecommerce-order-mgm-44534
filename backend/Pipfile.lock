@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0f836a2daa2fc70aff57403944d6ef21e2f70b0ea2b45b737f20db8396da31e7"
+            "sha256": "c581d6853d8a5b9dc67c2255eb58a7605fbceccb808cc87922a4dfd17b2b7886"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -180,6 +180,10 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==5.3.2"
+        },
+        "cb-django-core": {
+            "editable": true,
+            "path": "./modules/django_core"
         },
         "cb-django-two-factor-authentication": {
             "editable": true,
