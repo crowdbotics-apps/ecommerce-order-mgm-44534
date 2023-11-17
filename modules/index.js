@@ -1,76 +1,72 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
-const dummyData = [{
+import { SafeAreaView, StyleSheet, View, Text, Image, FlatList } from 'react-native';
+const paymentOptions = [{
   id: '1',
-  status: 'Processing',
-  customer: 'John Doe'
+  name: 'Stripe',
+  image: 'https://tinyurl.com/42evm3m3'
 }, {
   id: '2',
-  status: 'Shipped',
-  customer: 'Jane Doe'
-}, {
-  id: '3',
-  status: 'Delivered',
-  customer: 'Jim Doe'
-} // Add more dummy data as needed
-];
+  name: 'PayPal',
+  image: 'https://tinyurl.com/42evm3m3'
+}];
 
-const OrderScreen = () => {
-  const renderItem = ({
+const PaymentOption = ({
+  name,
+  image
+}) => <View style={styles.paymentOption}>
+    <Image source={{
+    uri: image
+  }} style={styles.paymentImage} />
+    <Text style={styles.paymentName}>{name}</Text>
+  </View>;
+
+const SecureTransactionsScreen = () => <SafeAreaView style={styles.container}>
+    <Text style={styles.title}>Secure Transactions with Multiple Payment Options</Text>
+    <FlatList data={paymentOptions} renderItem={({
     item
-  }) => <View style={styles.itemContainer}>
-      <Image style={styles.image} source={{
-      uri: 'https://tinyurl.com/42evm3m3'
-    }} />
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Order ID: {item.id}</Text>
-        <Text style={styles.text}>Customer: {item.customer}</Text>
-        <Text style={styles.text}>Status: {item.status}</Text>
-      </View>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Update Status</Text>
-      </TouchableOpacity>
-    </View>;
-
-  return <SafeAreaView style={styles.container}>
-      <FlatList data={dummyData} renderItem={renderItem} keyExtractor={item => item.id} />
-    </SafeAreaView>;
-};
+  }) => <PaymentOption {...item} />} keyExtractor={item => item.id} contentContainerStyle={styles.paymentList} />
+  </SafeAreaView>;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5'
+    backgroundColor: '#F5F5F5',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  itemContainer: {
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 20
+  },
+  paymentList: {
+    paddingHorizontal: 20
+  },
+  paymentOption: {
     flexDirection: 'row',
-    padding: 10,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    backgroundColor: '#fff',
+    alignItems: 'center',
+    backgroundColor: '#FFF',
+    padding: 20,
+    marginBottom: 10,
     borderRadius: 10,
-    alignItems: 'center'
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 3
   },
-  image: {
+  paymentImage: {
     width: 50,
     height: 50,
-    borderRadius: 25
+    marginRight: 20
   },
-  textContainer: {
-    flex: 1,
-    marginLeft: 10
-  },
-  text: {
-    fontSize: 16
-  },
-  button: {
-    padding: 10,
-    backgroundColor: '#4CAF50',
-    borderRadius: 5
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold'
+  paymentName: {
+    fontSize: 18,
+    color: '#333'
   }
 });
-export default OrderScreen;
+export default SecureTransactionsScreen;
