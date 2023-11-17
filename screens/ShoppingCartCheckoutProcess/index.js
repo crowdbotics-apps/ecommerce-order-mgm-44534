@@ -27,37 +27,37 @@ const ShoppingCartScreen = () => {
     quantity: 3
   }];
   const totalCost = dummyData.reduce((total, item) => total + item.price * item.quantity, 0);
-  return <SafeAreaView style={_styles.RVcdBUil}>
+  return <SafeAreaView style={_styles.MrKaFwUe}>
       <ScrollView>
         <FlatList data={dummyData} keyExtractor={item => item.id} renderItem={({
         item
-      }) => <View style={_styles.fLYSMMRP}>
+      }) => <View style={_styles.VLcSbGgd}>
               <Image source={{
           uri: 'https://tinyurl.com/42evm3m3'
-        }} style={_styles.GSNWGFXI} />
+        }} style={_styles.KZzEFmKE} />
               <Text>{item.title}</Text>
               <Text>{item.quantity} x ${item.price}</Text>
             </View>} />
-        <Text style={_styles.ziNZXygQ}>Total: ${totalCost}</Text>
-        <View style={_styles.EcgpSvge}>
-          <Text style={_styles.AYBIULjr}>Customer Information</Text>
+        <Text style={_styles.fWTHYsBx}>Total: ${totalCost}</Text>
+        <View style={_styles.OVGscPQr}>
+          <Text style={_styles.qbXWcHYK}>Customer Information</Text>
           <TextInput placeholder="Name" value={customerInfo.name} onChangeText={text => setCustomerInfo({ ...customerInfo,
           name: text
-        })} style={_styles.ZzFRyYUY} />
+        })} style={_styles.FpJSVXkt} />
           <TextInput placeholder="Address" value={customerInfo.address} onChangeText={text => setCustomerInfo({ ...customerInfo,
           address: text
-        })} style={_styles.USjRSgmc} />
+        })} style={_styles.waGYuBct} />
           <TextInput placeholder="Email" value={customerInfo.email} onChangeText={text => setCustomerInfo({ ...customerInfo,
           email: text
-        })} style={_styles.ZjsWGlbP} />
+        })} style={_styles.nVWjnWaB} />
         </View>
-        <View style={_styles.VObHzTQw}>
-          <Text style={_styles.oTanKOtX}>Shipping Method</Text>
+        <View style={_styles.mQUmrADE}>
+          <Text style={_styles.chgkNVGq}>Shipping Method</Text>
           <Button title="Standard" onPress={() => setShippingMethod('Standard')} />
           <Button title="Express" onPress={() => setShippingMethod('Express')} />
         </View>
-        <View style={_styles.NTXnqNlq}>
-          <Text style={_styles.CdttWdhZ}>Payment Method</Text>
+        <View style={_styles.wzXUNBkt}>
+          <Text style={_styles.wJANeXgT}>Payment Method</Text>
           <Button title="Credit Card" onPress={() => setPaymentMethod('Credit Card')} />
           <Button title="PayPal" onPress={() => setPaymentMethod('PayPal')} />
         </View>
@@ -69,61 +69,61 @@ const ShoppingCartScreen = () => {
 export default ShoppingCartScreen;
 
 const _styles = StyleSheet.create({
-  RVcdBUil: {
+  MrKaFwUe: {
     flex: 1,
     backgroundColor: "#fff"
   },
-  fLYSMMRP: {
+  VLcSbGgd: {
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 10
   },
-  GSNWGFXI: {
+  KZzEFmKE: {
     width: 50,
     height: 50
   },
-  ziNZXygQ: {
+  fWTHYsBx: {
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "right",
     padding: 10
   },
-  EcgpSvge: {
+  OVGscPQr: {
     padding: 10
   },
-  AYBIULjr: {
+  qbXWcHYK: {
     fontSize: 20,
     fontWeight: "bold"
   },
-  ZzFRyYUY: {
+  FpJSVXkt: {
     borderWidth: 1,
     borderColor: "#ddd",
     padding: 10,
     marginVertical: 10
   },
-  USjRSgmc: {
+  waGYuBct: {
     borderWidth: 1,
     borderColor: "#ddd",
     padding: 10,
     marginVertical: 10
   },
-  ZjsWGlbP: {
+  nVWjnWaB: {
     borderWidth: 1,
     borderColor: "#ddd",
     padding: 10,
     marginVertical: 10
   },
-  VObHzTQw: {
+  mQUmrADE: {
     padding: 10
   },
-  oTanKOtX: {
+  chgkNVGq: {
     fontSize: 20,
     fontWeight: "bold"
   },
-  NTXnqNlq: {
+  wzXUNBkt: {
     padding: 10
   },
-  CdttWdhZ: {
+  wJANeXgT: {
     fontSize: 20,
     fontWeight: "bold"
   }
