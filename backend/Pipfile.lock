@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0377ee1082548d69141a76eceab40397413ba80daea764c2812a9dbb890d246e"
+            "sha256": "eab928128ca0416ffeb33ff843a9852fbf4c7e43ee00d33c986c860bedd5f6fa"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -63,10 +63,6 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==5.3.2"
-        },
-        "cb-django-paypal": {
-            "editable": true,
-            "path": "./modules/django_paypal"
         },
         "certifi": {
             "hashes": [
